@@ -20,9 +20,7 @@ import frc.robot.commands.JoystickDrive;
 import frc.robot.subsystems.Drivetrain;
 import jaci.pathfinder.Pathfinder;
 import jaci.pathfinder.Trajectory;
-import jaci.pathfinder.Waypoint;
 import jaci.pathfinder.followers.EncoderFollower;
-import jaci.pathfinder.modifiers.TankModifier;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -58,7 +56,12 @@ public class Robot extends TimedRobot {
   public void robotInit() {
     m_chooser.setDefaultOption("Default Auto", kDefaultAuto);
     m_chooser.addOption("My Auto", kCustomAuto);
+
     SmartDashboard.putData("Auto choices", m_chooser);
+
+    SmartDashboard.putString("Test", "test");
+
+
 
     System.out.println("Running robot init");
     File leftFile = new File("/home/lvuser/trajectories/Unnamed.left.pf1.csv");
